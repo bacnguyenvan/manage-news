@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('command:WisebookAccess')
-                 ->dailyAt('22:30')
+                 ->dailyAt('00:15')
                  ->withoutOverlapping();
     }
 

@@ -42,8 +42,7 @@ class WisebookAccess extends Command
      */
     public function handle(Request $request)
     {
-        Log::info(date('Y-m-d H:i:s')." run crontab AccessWisebook success");
-
+        Log::info( date('Y-m-d H:i:s')." run crontab command:AccessWisebook success");
         $articleAccessService = new ArticleAccessService();
 
         // remove record

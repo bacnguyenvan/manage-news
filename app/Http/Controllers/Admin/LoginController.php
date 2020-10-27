@@ -12,7 +12,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        \Log::info(date('Y-m-d H:i:s')." run crontab AccessWisebook success");
         $errors =[];
         $inputs = [
             'admin_user_id' => $request->input('admin_user_id', null),
