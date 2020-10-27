@@ -1,0 +1,258 @@
+@import '_variables';
+body {
+	background-color: white;
+}
+.admin-container {
+	background-color: $adminBlue;
+}
+
+.app-wrapper {
+	display: flex;
+}
+
+.app-container {
+	width: 100%;
+	margin-left: $sideBarWidth;
+}
+
+.topbar {
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	// align-items: center;
+	.title {
+		align-self: center;
+		font-size: 18px;
+	}
+}
+
+.app-content {
+	padding: 10px;
+}
+
+.sidebar {
+	height: 100%;
+	width: $sideBarWidth;
+	z-index: 10;
+	overflow: auto;
+	color: white;
+	position: fixed;
+	.title {
+		padding: 10px;
+		text-align: justify;
+  		text-justify: inter-character;
+		border-bottom: 1px solid white;
+	}
+	&.admin-color {
+		background-color: $adminBlue;
+	}
+	ul {
+		list-style-type: none;
+	}
+	* a {
+		color: white;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.menu {
+		padding: 10px 0px 0px 10px;
+		li {
+			&.active > .item-link {
+				.item-title:before {
+					width: 100%;
+					background: white;
+				}
+			}
+		}
+		.menu-item {
+			position: relative;
+			&.has-sub-menu {
+				.item-link:after {
+					font-family: 'Font Awesome 5 Free';
+					content: "\f078";
+				}
+				&.active {
+					.sub-menu {
+						display: block;
+					}
+					& > .item-link:after {
+						font-family: 'Font Awesome 5 Free';
+						content: "\f077";
+					}
+				}
+			}
+			.item-link {
+				position: relative;
+				padding: 10px 5px;
+				text-overflow: ellipsis;
+				width: 100%;
+				overflow: hidden; 
+				white-space: nowrap;
+				cursor: pointer;
+				display: block;
+				.item-title {
+					position: relative;
+					&:before {
+						position: absolute;
+						content: '';
+						height: 2px;
+						bottom: -4px;
+						margin: 0 auto;
+						left: 0;
+						right: 0;
+					}
+				}
+				
+				&:after {
+					line-height: 1.2;
+					margin: 10px;
+					position: absolute;
+					right: 0;
+					top:0;
+					font-family: 'Font Awesome 5 Free';
+				}
+				&:hover {
+					.item-title:before {
+						width: 100%;
+						background: white;
+					}
+				}
+			}
+			.sub-menu {
+				display: none;
+				-o-transition:.5s;
+				-ms-transition:.5s;
+				-moz-transition:.5s;
+				-webkit-transition:.5s;
+				transition:.5s;
+				.item-link:after {
+					content: "";
+				}
+			}
+		}
+	}
+}
+
+.custom-table {
+	width: 100%;
+	white-space: nowrap;
+	thead > tr {
+		background-color: #ecf6ff;
+		th {
+			width: auto;
+			&.sort{
+				cursor: pointer;
+				&.sort-white:after {
+					color: #fff;
+				}
+				&:after {
+					font-family: "Font Awesome 5 Free";
+					content: "\f0dc";
+					display: inline-block;
+
+				}
+				&[sort-type="desc"] {
+					&:after {
+						content: "\f0dd";
+					}
+				}
+				&[sort-type="asc"] {
+					&:after {
+						content: "\f0de";
+					}
+				}
+			}
+			
+		}
+	}
+	tbody > tr {
+		td {
+			max-width: 300px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			vertical-align: middle;
+			&.full-text {
+				white-space: normal;
+				overflow-wrap: break-word;
+			}
+
+			&.btn-full-text {
+				white-space: normal;
+				overflow-wrap: break-word;
+				padding-bottom: 7px;
+				a, button {
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+	&.scroll-horizontal {
+		tbody > tr {
+			td {
+				max-width: none;
+			}
+		}
+	}
+}
+
+.login-page {
+	height: 100vh;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	.login-container {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 50px;
+		.login-title {
+			color: white;
+			align-self: center;
+		}
+		.login-box {
+			width: 360px;
+			align-self: center;
+		}
+	}
+}
+
+.border-gray {
+	border: 1px solid #ced4da !important;
+}
+
+.input-error {
+	border: 1px solid rgb(227, 52, 47) !important;
+}
+
+.btn-default {
+	border: 1px solid gray;
+}
+
+.btn-admin-color {
+	background-color: $adminBlue;
+	color: white;
+	&:hover {
+		color: white;
+	}
+}
+.outline-danger {
+	outline: 1px solid #e3342f !important;
+}
+.btn-cancel{
+	background-color: $btn_cancel_bk;
+	border: 1px solid gray !important;
+}
+.btn-next{
+	background-color: $btn_next_bk;
+	color: #ffffff;
+}
+.background-light-blue {
+	background-color: #ECF6FF !important;
+}
+

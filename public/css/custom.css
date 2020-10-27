@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+@-webkit-keyframes animationFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animationFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: white;
+}
+
+.admin-container {
+  background-color: #193172;
+}
+
+.app-wrapper {
+  display: flex;
+}
+
+.app-container {
+  width: 100%;
+  margin-left: 200px;
+}
+
+.topbar {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.topbar .title {
+  align-self: center;
+  font-size: 18px;
+}
+
+.app-content {
+  padding: 10px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  z-index: 10;
+  overflow: auto;
+  color: white;
+  position: fixed;
+}
+
+.sidebar .title {
+  padding: 10px;
+  text-align: justify;
+  text-justify: inter-character;
+  border-bottom: 1px solid white;
+}
+
+.sidebar.admin-color {
+  background-color: #193172;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar * a {
+  color: white;
+}
+
+.sidebar * a:hover {
+  text-decoration: none;
+}
+
+.sidebar .menu {
+  padding: 10px 0px 0px 10px;
+}
+
+.sidebar .menu li.active > .item-link .item-title:before {
+  width: 100%;
+  background: white;
+}
+
+.sidebar .menu .menu-item {
+  position: relative;
+}
+
+.sidebar .menu .menu-item.has-sub-menu .item-link:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\F078";
+}
+
+.sidebar .menu .menu-item.has-sub-menu.active .sub-menu {
+  display: block;
+}
+
+.sidebar .menu .menu-item.has-sub-menu.active > .item-link:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\F077";
+}
+
+.sidebar .menu .menu-item .item-link {
+  position: relative;
+  padding: 10px 5px;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  display: block;
+}
+
+.sidebar .menu .menu-item .item-link .item-title {
+  position: relative;
+}
+
+.sidebar .menu .menu-item .item-link .item-title:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: -4px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.sidebar .menu .menu-item .item-link:after {
+  line-height: 1.2;
+  margin: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: "Font Awesome 5 Free";
+}
+
+.sidebar .menu .menu-item .item-link:hover .item-title:before {
+  width: 100%;
+  background: white;
+}
+
+.sidebar .menu .menu-item .sub-menu {
+  display: none;
+  transition: 0.5s;
+}
+
+.sidebar .menu .menu-item .sub-menu .item-link:after {
+  content: "";
+}
+
+.custom-table {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.custom-table thead > tr {
+  background-color: #ecf6ff;
+}
+
+.custom-table thead > tr th {
+  width: auto;
+}
+
+.custom-table thead > tr th.sort {
+  cursor: pointer;
+}
+
+.custom-table thead > tr th.sort.sort-white:after {
+  color: #fff;
+}
+
+.custom-table thead > tr th.sort:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\F0DC";
+  display: inline-block;
+}
+
+.custom-table thead > tr th.sort[sort-type=desc]:after {
+  content: "\F0DD";
+}
+
+.custom-table thead > tr th.sort[sort-type=asc]:after {
+  content: "\F0DE";
+}
+
+.custom-table tbody > tr td {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.custom-table tbody > tr td.full-text {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.custom-table tbody > tr td.btn-full-text {
+  white-space: normal;
+  overflow-wrap: break-word;
+  padding-bottom: 7px;
+}
+
+.custom-table tbody > tr td.btn-full-text a,
+.custom-table tbody > tr td.btn-full-text button {
+  margin-bottom: 5px;
+}
+
+.custom-table.scroll-horizontal tbody > tr td {
+  max-width: none;
+}
+
+.login-page {
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-page .login-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.login-page .login-container .login-title {
+  color: white;
+  align-self: center;
+}
+
+.login-page .login-container .login-box {
+  width: 360px;
+  align-self: center;
+}
+
+.border-gray {
+  border: 1px solid #ced4da !important;
+}
+
+.input-error {
+  border: 1px solid #e3342f !important;
+}
+
+.btn-default {
+  border: 1px solid gray;
+}
+
+.btn-admin-color {
+  background-color: #193172;
+  color: white;
+}
+
+.btn-admin-color:hover {
+  color: white;
+}
+
+.outline-danger {
+  outline: 1px solid #e3342f !important;
+}
+
+.btn-cancel {
+  background-color: #ffffff;
+  border: 1px solid gray !important;
+}
+
+.btn-next {
+  background-color: #193172;
+  color: #ffffff;
+}
+
+.background-light-blue {
+  background-color: #ECF6FF !important;
+}
+
